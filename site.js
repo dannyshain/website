@@ -84,6 +84,15 @@ for (const section of sections) {
   sectionObserver.observe(section);
 }
 
+// Activate Contact when scrolled to bottom of page
+window.addEventListener("scroll", () => {
+  if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+    for (const link of navLinks) {
+      link.classList.toggle("is-active", link.dataset.nav === "contact");
+    }
+  }
+}, { passive: true });
+
 // ── Scroll reveal ─────────────────────────────────────────────
 const revealItems = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver(
