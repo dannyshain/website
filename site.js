@@ -67,22 +67,20 @@ tick();
 const sections = document.querySelectorAll("main [id]");
 const navLinks = document.querySelectorAll(".nav-links a[data-nav]");
 
-const sectionObserver = new IntersectionObserver(
-  entries => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        for (const link of navLinks) {
-          link.classList.toggle("is-active", link.dataset.nav === entry.target.id);
-        }
-      }
+function updateActiveNav() {
+  const trigger = window.innerHeight * 0.35;
+  let current = null;
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top <= trigger) {
+      current = section.id;
     }
-  },
-  { rootMargin: "-30% 0px -20% 0px" }
-);
-
-for (const section of sections) {
-  sectionObserver.observe(section);
+  }
+  for (const link of navLinks) {
+    link.classList.toggle("is-active", current !== null && link.dataset.nav === current);
+  }
 }
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
 
 // ── Scroll reveal ─────────────────────────────────────────────
 const revealItems = document.querySelectorAll(".reveal");
