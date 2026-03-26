@@ -64,7 +64,7 @@ function tick() {
 tick();
 
 // ── Active nav on scroll ──────────────────────────────────────
-const sections = document.querySelectorAll("main [id]");
+const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".nav-links a[data-nav]");
 
 function updateActiveNav() {
