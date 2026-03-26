@@ -68,7 +68,7 @@ const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".nav-links a[data-nav]");
 
 function updateActiveNav() {
-  const trigger = window.innerHeight * 0.35;
+  const trigger = window.innerHeight * 0.6;
   let current = null;
   for (const section of sections) {
     if (section.getBoundingClientRect().top <= trigger) {
