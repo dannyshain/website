@@ -454,6 +454,10 @@ a {
   .page-wrap {
     gap: 4.5rem;
   }
+
+  .section-home h1 {
+    min-height: 3.45em;
+  }
 }
 
 @media (max-width: 480px) {
