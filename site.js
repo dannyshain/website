@@ -77,21 +77,12 @@ const sectionObserver = new IntersectionObserver(
       }
     }
   },
-  { rootMargin: "-30% 0px -60% 0px" }
+  { rootMargin: "-30% 0px -20% 0px" }
 );
 
 for (const section of sections) {
   sectionObserver.observe(section);
 }
-
-// Activate Contact when scrolled to bottom of page
-window.addEventListener("scroll", () => {
-  if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
-    for (const link of navLinks) {
-      link.classList.toggle("is-active", link.dataset.nav === "contact");
-    }
-  }
-}, { passive: true });
 
 // ── Scroll reveal ─────────────────────────────────────────────
 const revealItems = document.querySelectorAll(".reveal");
