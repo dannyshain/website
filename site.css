@@ -453,6 +453,8 @@ a {
 
   .page-wrap {
     gap: 4.5rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
   }
 
   .section-home h1 {
@@ -464,5 +466,13 @@ a {
   .nav-links a {
     padding: 0.35rem 0.6rem;
     font-size: 0.82rem;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .brand-name {
+    letter-spacing: 0.07em;
   }
 }
