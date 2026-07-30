@@ -19,6 +19,7 @@ themeBtn.addEventListener("click", () => {
 const phrases = [
   "write content that ranks—and gets cited.",
   "explain technical concepts to any audience.",
+  "build my own AI tools.",
   "craft systems that build trust and convert.",
   "help clarify your brand and your value.",
   "build content programs that work.",

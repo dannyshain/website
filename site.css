@@ -246,6 +246,15 @@ a {
   margin: 0;
 }
 
+.about-text + .about-text {
+  margin-top: 1.15em;
+}
+
+/* Keeps an em-dash from wrapping to the start of a line */
+.nobreak {
+  white-space: nowrap;
+}
+
 /* ============================================================
    METRICS SECTION
    ============================================================ */
@@ -416,6 +425,11 @@ a {
 
 .site-footer p {
   margin: 0;
+}
+
+.footer-colophon {
+  margin-top: 0.45rem !important;
+  opacity: 0.72;
 }
 
 /* ============================================================
