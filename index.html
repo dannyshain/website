@@ -24,6 +24,16 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Exclude owner + automated traffic. Visit /?notrack=1 once per browser to opt out
+    // (/?notrack=0 to undo). navigator.webdriver catches Playwright/automation browsers.
+    try {
+      var q = location.search;
+      if (/[?&]notrack=1\b/.test(q)) localStorage.setItem('ds_notrack', '1');
+      if (/[?&]notrack=0\b/.test(q)) localStorage.removeItem('ds_notrack');
+      if (localStorage.getItem('ds_notrack') === '1' || navigator.webdriver) {
+        window['ga-disable-G-PGMNHBVRPD'] = true;
+      }
+    } catch (e) {}
     gtag('config', 'G-PGMNHBVRPD', {
       storage: 'none',
       analytics_storage: 'denied'
